@@ -1,0 +1,17 @@
+{
+  "name": "task-1-backend",
+  "version": "1.0.0",
+  "description": "For Task Round of Mask",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "destryptor",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "nodemon": "^3.0.1"
+  }
+}
