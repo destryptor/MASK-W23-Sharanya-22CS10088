@@ -57,11 +57,20 @@ app.post('/submit', function (req, res) {
 })
 
 app.get('/', function (req, res) {
+    res.status(200).redirect('home.html');
+});
+
+app.get('/about', function (req, res) {
+    res.status(201).redirect('about.html');
+});
+
+app.get('/form', function (req, res) {
     res.set({
         'Access-control-Allow-Origin': '*'
     });
-    return res.redirect('index.html');
+    return res.redirect('form.html');
 })
+
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)
