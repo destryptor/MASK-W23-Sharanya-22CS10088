@@ -1,3 +1,4 @@
+//declaring constants and initialising them
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -10,6 +11,7 @@ const options = {
     useUnifiedTopology: true,
 };
 
+//connecting to the MongoDB database
 mongoose.connect(uri, options)
     .then(() => {
         console.log("Connected to database 'TaskRound' successfully!");
@@ -20,6 +22,7 @@ mongoose.connect(uri, options)
 
 var db = mongoose.connection;
 
+//initialising the app
 const app = express();
 
 app.use(bodyParser.json());
@@ -28,6 +31,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+//defining the POST request
 app.post('/submit', function (req, res) {
     var name = req.body.name;
     var dob = req.body.dob;
@@ -45,6 +49,7 @@ app.post('/submit', function (req, res) {
         "phone": phone
     }
 
+    //inserting the data into the database
     db.collection('FormDetails').insertOne(data, (error, result) => {
         if (error) {
             console.error('Error inserting data:', error);
@@ -53,9 +58,11 @@ app.post('/submit', function (req, res) {
         }
     });
 
+    //redirecting to a primitive 'thank you' page after form submission
     return res.redirect('thank_you.html');
 })
 
+//a simple GET request to view the initial form page
 app.get('/', function (req, res) {
     res.status(200).redirect('home.html');
 });
