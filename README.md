@@ -3,8 +3,8 @@
   Name: Sharanya Chakraborty <br>
   Roll Number: 22CS10088 <br>
   Discord Username: destryptor <br>
-  Anilist Link: <a href="https://anilist.co/user/destryptor/" target="_blank">destryptor</a> (Updated more than MAL) <br>
-  MyAnimeList Link: <a href="https://myanimelist.net/profile/destryptor" target="_blank"> destryptor </a>
+  Anilist Link: <a href="https://anilist.co/user/destryptor/">destryptor</a> (Updated more than MAL) <br>
+  MyAnimeList Link: <a href="https://myanimelist.net/profile/destryptor">destryptor</a>
 </div>
 <br>
 <div>About myself: 
@@ -34,7 +34,7 @@
 <div>
   Projects: 
   <p>I haven't made a full-fledged project yet, I'm hoping to develop my skills more by being a part of MASK to create a good project.<br>
-  However, I do have a repository called <a href="https://github.com/destryptor/Words-of-Beauty.git" target="_blank">Words of Beauty</a> which may not count as a project, but contains a simple Java program to add quotes from any sources into a text file which is accessible to all.
+  However, I do have a repository called <a href="https://github.com/destryptor/Words-of-Beauty.git">Words of Beauty</a> which may not count as a project, but contains a simple Java program to add quotes from any sources into a text file which is accessible to all.
   </p>
 </div>
 <br>
