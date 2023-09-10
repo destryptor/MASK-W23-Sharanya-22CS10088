@@ -62,7 +62,7 @@ app.post('/submit', function (req, res) {
     return res.redirect('thank_you.html');
 })
 
-//a simple GET request to view the initial form page
+//a simple GET request to view the initial home page
 app.get('/', function (req, res) {
     res.status(200).redirect('home.html');
 });
