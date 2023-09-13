@@ -35,4 +35,41 @@
     </div>
 </body>
 
+<script>
+    function validateForm() {
+        var nameField = document.getElementById('name');
+        var passwordField = document.getElementById('password');
+        var phoneField = document.getElementById('phone');
+
+        // only letters in name
+        var namePattern = /^[A-Za-z ]+$/;
+        if (!namePattern.test(nameField.value)) {
+            alert('Name should contain only alphabets.');
+            return false;
+        }
+
+        // atleast 8 characters long password
+        if (passwordField.value.length < 8) {
+            alert('Password should be at least 8 characters long.');
+            return false;
+        }
+
+        // phone number should be 10 digits and only numeric
+        var phonePattern = /^\d{10}$/;
+        var phonePattern2 = /^[0-9]+$/;
+
+        if (!phonePattern2.test(phoneField.value)) {
+            alert('Phone number should contain only numeric characters (0-9).');
+            phoneField.value = '';
+            return false;
+        }
+        if (!phonePattern.test(phoneField.value)) {
+            alert('Phone number should be 10 digits long.');
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
 </html>
