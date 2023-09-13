@@ -20,10 +20,25 @@ h4 {
     padding: 4px;
     margin: 15px auto;
     width: 33%;
+    width: max(33%, 350px);
     outline: none;
     border: 2px solid black;
     border-radius: 5px;
 }
+
+/* I liked the max function better than the media querries implementation below */
+
+/* @media screen and (max-width: 768px) {
+    .box {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .box {
+        width: 95%;
+    }
+} */
 
 #submitDetails {
     margin: 4px auto;
@@ -132,5 +147,13 @@ li a:active{
 
 .search-results a:hover {
     background-color: rgb(221, 221, 221);
+}
+
+#dob{
+    height: 20px;
+}
+
+#address{
+    resize: none;
 }
 
