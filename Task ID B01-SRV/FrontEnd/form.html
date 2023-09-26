@@ -11,14 +11,14 @@
 <body>
     <h1>Task Round Form</h1>
     <div class="container">
-        <form action="http://localhost/submit" method="post" onsubmit="return validateForm()">
+        <form action="http://localhost/submit" method="post" id="form">
 
             <h4>Please fill up the form below:</h4>
 
             <input type="text" class="box" name="name" id="name" placeholder="Name" required />
 
             <input type="text" class="box" name="dob" id="dob" placeholder="Date of Birth" required
-                onfocus="(this.type='date')" onblur="(this.type='text')" />
+                onblur="(this.type='text')" onfocus="(this.type='date')" />
 
             <textarea class="box" name="address" id="address" cols="20" rows="4" placeholder="Address"></textarea>
 
@@ -36,40 +36,56 @@
 </body>
 
 <script>
-    function validateForm() {
-        var nameField = document.getElementById('name');
-        var passwordField = document.getElementById('password');
-        var phoneField = document.getElementById('phone');
+    //the main function to send the POST requests and see what the error/success status is
+    async function handleFormSubmission(formData) {
 
-        // only letters in name
-        var namePattern = /^[A-Za-z ]+$/;
-        if (!namePattern.test(nameField.value)) {
-            alert('Name should contain only alphabets.');
-            return false;
+        const validationResponse = await fetch('/validate', {
+            method: 'POST',
+            body: new URLSearchParams(formData),
+        });
+
+        if (validationResponse.ok) {
+
+            const submissionResponse = await fetch('/submit', {
+                method: 'POST',
+                body: new URLSearchParams(formData),
+            });
+
+            if (submissionResponse.ok) {
+
+                const responseText = await submissionResponse.text();
+
+                if (responseText.includes('Data inserted successfully')) {
+                    alert('Data inserted successfully');
+                    window.location.href = 'thank_you.html';
+                } else {
+                    alert('An error occurred while processing your request.');
+                }
+
+            } else {
+
+                const errorMessage = await submissionResponse.text();
+                alert(errorMessage);
+
+            }
+        } else {
+
+            const validationErrors = await validationResponse.json();
+            alert('Please fix these entries:\n' + validationErrors.errors.join('\n'));
+
         }
-
-        // atleast 8 characters long password
-        if (passwordField.value.length < 8) {
-            alert('Password should be at least 8 characters long.');
-            return false;
-        }
-
-        // phone number should be 10 digits and only numeric
-        var phonePattern = /^\d{10}$/;
-        var phonePattern2 = /^[0-9]+$/;
-
-        if (!phonePattern2.test(phoneField.value)) {
-            alert('Phone number should contain only numeric characters (0-9).');
-            phoneField.value = '';
-            return false;
-        }
-        if (!phonePattern.test(phoneField.value)) {
-            alert('Phone number should be 10 digits long.');
-            return false;
-        }
-
-        return true;
     }
+
+    //function to prevent submission and instead allow for validation and checking for submission
+    document.getElementById('form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const form = document.getElementById('form');
+        const formData = new FormData(form);
+
+        handleFormSubmission(formData);
+    });
 </script>
+
 
 </html>
