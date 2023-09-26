@@ -11,7 +11,7 @@
 <body>
     <h1>Task Round Form</h1>
     <div class="container">
-        <form action="http://localhost/submit" method="post" id="form">
+        <form action="http://localhost/form/submit" method="post" id="form">
 
             <h4>Please fill up the form below:</h4>
 
@@ -39,14 +39,14 @@
     //the main function to send the POST requests and see what the error/success status is
     async function handleFormSubmission(formData) {
 
-        const validationResponse = await fetch('/validate', {
+        const validationResponse = await fetch('/form/validate', {
             method: 'POST',
             body: new URLSearchParams(formData),
         });
 
         if (validationResponse.ok) {
 
-            const submissionResponse = await fetch('/submit', {
+            const submissionResponse = await fetch('/form/submit', {
                 method: 'POST',
                 body: new URLSearchParams(formData),
             });
