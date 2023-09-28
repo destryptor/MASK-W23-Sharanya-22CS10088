@@ -1,0 +1,159 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    margin: -8px;
+    padding: 5px;
+    display: block;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+h4 {
+    text-align: center;
+}
+
+.box {
+    display: block;
+    padding: 4px;
+    margin: 15px auto;
+    width: 33%;
+    width: max(33%, 350px);
+    outline: none;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+/* I liked the max function better than the media querries implementation below */
+
+/* @media screen and (max-width: 768px) {
+    .box {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .box {
+        width: 95%;
+    }
+} */
+
+#submitDetails {
+    margin: 4px auto;
+    display: block;
+    padding: 5px 12px;
+    background-color: rgb(194, 191, 191);
+    color: black;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#submitDetails:active {
+    background-color: rgb(139, 139, 139)
+}
+
+nav{
+    background-color: black;
+    color: white;
+    padding: 3px 4px;
+    margin: -8px;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+}
+
+li{
+    list-style: none;
+    padding: 10px 14px;
+    color: white;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+li a:active{
+    color:rgb(255, 0, 0)
+}
+
+.container{
+    font-size: large;
+}
+
+.btn{
+    margin: 4px auto;
+    display: block;
+    padding: 5px 12px;
+    background-color: rgb(194, 191, 191);
+    color: black;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.btn:active {
+    background-color: rgb(139, 139, 139);
+}
+
+.btn:visited{
+    color: black;
+}
+
+.btn a{
+    text-decoration: none;
+    color: black;
+}
+
+.navbar ul .search-container {
+    margin-left: auto;
+    margin-right: 15px;
+    padding: 6px;
+    border: none;
+    font-size: 17px;
+}
+
+#searchInput {
+    padding: 5px;
+    width: 200px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-results {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    border: 1px solid rgb(220, 220, 220);
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.search-results a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: rgb(101, 100, 100);
+}
+
+.search-results a:hover {
+    background-color: rgb(221, 221, 221);
+}
+
+#dob{
+    height: 20px;
+}
+
+#address{
+    resize: none;
+}
+
