@@ -23,7 +23,7 @@ I am a backend enthusiast. I don't get much time to learn more about backend-rel
 
 I found the task to be quite interesting, since the last thing I had learned was setting up a MongoDB database and storing data manually in it. So I learned about how to add data via JS and completed the task. In this process, I was able to revise the concepts of basic CSS to make the form look a bit pleasant to the eyes. I also learned about a few new things, such as 'Access-control-Allow-Origin': '*', how to change the type of a form element dynamically (text type onblur, date type onfocus) etc.\
 Thanks to Ankan, I was able to learn how to implement both client-side and server-side validation. I improved the error handling too.\
-Thanks to Goos, I was able to learn how to use MD properly XD.\
+Thanks to Goos, I was able to learn how to use MD properly XD. I was also able to optimise/ restructure my code.\
 Overall, it was a pretty enjoyable task.
 
 **Projects:**
