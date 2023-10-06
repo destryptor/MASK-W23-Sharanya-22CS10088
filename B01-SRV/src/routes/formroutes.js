@@ -29,11 +29,11 @@ const loginValidate = [
     check('dob').notEmpty().withMessage('Date of birth is required.'),
 
     //address verification
-    check('address').notEmpty().withMessage('Date of birth is required.'),
+    check('address').notEmpty().withMessage('Address is required.'),
 
     //email verification
     check('email')
-        .notEmpty().withMessage('Date of birth is required.')
+        .notEmpty().withMessage('Email is required.')
         .isEmail().withMessage('Email address should be of valid format')
 ];
 
